@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Android1"
+             BackgroundColor="{StaticResource background}"
+             x:Class="Android1.Login">
+
+    <ContentPage.Resources>
+        <!--dark-->
+        <ResourceDictionary>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+            <Color x:Key="background">#161616</Color>
+            <Color x:Key="entryBackground">#eeeeee</Color>
+            <Color x:Key="text1">#eeeeee</Color>
+            <Color x:Key="text2">#ffffff</Color>
+            <Color x:Key="primary1">#ff5050</Color>
+            <Color x:Key="primary2">#373737</Color>
+            <Color x:Key="link">#62d1ff</Color>
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+    <Grid Margin="5,5,5,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="20*" />            
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+                
+        <Label Grid.Row="0"/>
+        <StackLayout Grid.Row="1" Grid.ColumnSpan="4" BackgroundColor="{StaticResource primary2}"></StackLayout>
+        <Image 
+           Source= "https://static.wixstatic.com/media/72095d_e24d82df76264068989449b2fd08c765~mv2.png"
+            Aspect="AspectFit"
+           Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"/>
+        <Entry 
+            BackgroundColor="{StaticResource entryBackground}"
+            Placeholder="E-mail"
+            x:Name="E_Email"
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            />
+        <Entry
+            BackgroundColor="{StaticResource entryBackground}"
+            Placeholder="Password"
+            IsPassword="True"
+            x:Name="E_Password"
+            Grid.Row="4"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            />
+        <Button
+            Text="Login"
+            Grid.Row="5"
+            Grid.Column="1"
+            BackgroundColor="#878787"
+            Clicked="Login_Clicked"
+            />
+        <Button
+            Text="Register"
+            Grid.Row="5"
+            Grid.Column="2"
+            BackgroundColor="#878787"
+            StyleClass="Link"
+            Clicked="Register_Clicked"
+            />
+        
+        <Label
+            Text="Forgot Password"
+            x:Name="L_ForgotPass"
+            Grid.Row="6"
+            Grid.Column="2"
+            HorizontalOptions="End"
+            TextColor="{StaticResource primary1}"
+            />
+        <Label
+            x:Name="loginWarn"
+            Text=""
+            Grid.Row="6"
+            Grid.Column="1"
+            HorizontalOptions="Start"
+            TextColor="{StaticResource text1}"
+            
+            />
+        <Label 
+            Grid.Row="7"
+            Margin="0,0,0,0"
+            BackgroundColor="Transparent"
+            x:Name="websiteURL"
+            StyleClass="Link" 
+            Text="to website"
+            HorizontalOptions="Center"  
+            Grid.Column="1" 
+            Grid.ColumnSpan="2" 
+            VerticalOptions="End"
+            TextColor="{StaticResource primary1}"
+            />
+
+
+
+    </Grid>
+
+</ContentPage>

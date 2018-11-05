@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Android1.AppointmentForm"
+             Title="Appointment Request"
+             BackgroundColor="{StaticResource background}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+            <Style TargetType="DatePicker">
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+            <Color x:Key="background">#161616</Color>
+            <Color x:Key="entryBackground">#eeeeee</Color>
+            <Color x:Key="text1">#eeeeee</Color>
+            <Color x:Key="text2">#ffffff</Color>
+            <Color x:Key="primary1">#ff5050</Color>
+            <Color x:Key="primary2">#373737</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Spacing="0" >
+                
+                <StackLayout 
+                    BackgroundColor="{StaticResource primary1}">
+
+                    <Label Margin="0,15,0,20"
+                            FontSize="20" 
+                            Text="Request Appointment" 
+                            TextColor="{StaticResource text2}"
+                            HorizontalOptions="Center"
+                            FontAttributes="Bold"/>
+
+                </StackLayout>
+                <StackLayout Padding="20,0,30,100">
+
+                    <Grid Padding="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <StackLayout Grid.Row="0" Grid.Column="0">
+                            <Label x:Name="L_FName" Text="First name" VerticalOptions="End"/>
+                            <Entry x:Name="E_FName" VerticalOptions="Start" />
+                            <Label x:Name="fNameWarn" Text="" Opacity="0"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+                            <Label x:Name="L_MName" Text="Middle name" VerticalOptions="End"/>
+                            <Entry x:Name="E_MName" VerticalOptions="Start" />
+                            <Label x:Name="mNameWarn" Text="" Opacity="0"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+                            <Label x:Name="L_LName" Text="Last name" VerticalOptions="End"/>
+                            <Entry x:Name="E_LName" VerticalOptions="Start" />
+                            <Label x:Name="lNameWarn" Text="" Opacity="0"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                            <Label x:Name="L_Email" Text="E-mail" VerticalOptions="End"/>
+                            <Entry x:Name="E_Email" VerticalOptions="Start" Keyboard="Email"/>
+                            <Label x:Name="EmailWarn" Text="" Opacity="0"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                            <Label x:Name="L_PhoneN" Text="Phone Number" VerticalOptions="End"/>
+                            <Entry x:Name="E_PhoneN" VerticalOptions="Start" Keyboard="Numeric"/>
+                            <Label x:Name="PhoneNWarn" Text="" Opacity="0"/>
+                           </StackLayout>
+                        <StackLayout Grid.Row="3" Grid.Column="2">
+                            <Label x:Name="L_Age" Text="Age" VerticalOptions="End"/>
+                            <Entry x:Name="E_Age" VerticalOptions="Start"/>
+                            <Label x:Name="AgeWarn" Text="" Opacity="0"/>
+                        </StackLayout>
+                    </Grid>
+
+                    <Label x:Name="L_Date" Text="Request Date" VerticalOptions="End"/>
+                    <DatePicker x:Name="E_Date" VerticalOptions="Start" 
+                                        Margin="0,0,200,0">
+                    </DatePicker>
+                    <Label x:Name="DateWarn" Text="" Opacity="0"/>
+
+                    <Label x:Name="L_Time" Text="Time Range" VerticalOptions="End"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="L_TimeStart" Text="Start" VerticalOptions="End"
+                               Grid.Column="0"/>
+
+                        <Label x:Name="L_TimeEnd" Text="End" VerticalOptions="End"
+                               Grid.Column="1"/>
+                    </Grid>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Entry x:Name="E_TimeStart" VerticalOptions="Start" Keyboard="Numeric"
+                               Grid.Column="0"/>
+                        <Picker x:Name="E_TimeStartPicker" VerticalOptions="Start" BackgroundColor="#888888"
+                                TextColor="White"
+                                SelectedIndex="0"
+                               Grid.Column="1">
+                            <Picker.Items>
+                                <x:String>AM</x:String>
+                                <x:String>PM</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                        <Entry x:Name="E_TimeEnd" VerticalOptions="Start" Keyboard="Numeric"
+                               Grid.Column="2"/>
+                        <Picker x:Name="E_TimeEndPicker" VerticalOptions="Start" BackgroundColor="#888888"
+                                SelectedIndex="0" TextColor="White"
+                               Grid.Column="3">
+                            <Picker.Items>
+                                <x:String>AM</x:String>
+                                <x:String>PM</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Grid>
+
+                    <Label x:Name="TimeWarn" Text="" Opacity="0"/>
+
+                    <Label x:Name="L_Skin" Text="Your skin tone" VerticalOptions="End"/>
+                    <Label x:Name="L_Skin2" Text="*your tone is a factor in the tattooing proccess" VerticalOptions="End"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button x:Name="Color1" 
+                                BackgroundColor="#ffe7bc" 
+                                Clicked="Color1_Clicked"
+                                BorderColor="Transparent" 
+                                BorderWidth="5" 
+                                BorderRadius="1"
+                                Grid.Column="0"/>
+                        
+                        <Button x:Name="Color2" 
+                                BackgroundColor="#fac595" 
+                                Clicked="Color2_Clicked"
+                                BorderColor="Transparent" 
+                                BorderWidth="5" 
+                                BorderRadius="1"
+                                Grid.Column="1"/>
+                        
+                        <Button x:Name="Color3" 
+                                BackgroundColor="#c97c56" 
+                                Clicked="Color3_Clicked"
+                                BorderColor="Transparent" 
+                                BorderWidth="5" 
+                                BorderRadius="1"
+                                Grid.Column="2"/>
+                        
+                        <Button x:Name="Color4" 
+                                BackgroundColor="#76371c" 
+                                Clicked="Color4_Clicked"
+                                BorderColor="Transparent" 
+                                BorderWidth="5" 
+                                BorderRadius="1"
+                                Grid.Column="3"/>
+                    </Grid>
+
+                    <Label x:Name="L_Address" Text="Address" VerticalOptions="End"/>
+                    <Entry x:Name="E_Address1"  VerticalOptions="Start"/>
+                    <Entry x:Name="E_Address2"  VerticalOptions="Start"/>
+                    <Label x:Name="AddressWarn" Text="" Opacity="0"/>
+
+                    <Label x:Name="L_Gender" Text="Gender" VerticalOptions="End"/>
+                    <Picker x:Name="E_Gender" VerticalOptions="Start" Margin="0,0,200,0" BackgroundColor="White">
+                        <Picker.Items>
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label x:Name="GenderWarn" Text="" Opacity="0"/>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Button 
+                        x:Name="btn_submit"
+                            Grid.Row="0"
+                        Text="Submit"
+                        HorizontalOptions="End"
+                        Clicked="Submit"/>
+                        <Button 
+                            Grid.Row="0"
+                        x:Name="btn_cancel"
+                        Text="Cancel"
+                        HorizontalOptions="Start"
+                        Clicked="BackButton"/>
+                    </Grid>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

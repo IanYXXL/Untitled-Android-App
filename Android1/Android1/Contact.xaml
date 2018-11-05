@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Android1.Contact"
+             xmlns:local="clr-namespace:Android1"
+             BackgroundColor="{StaticResource background}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <Color x:Key="background">#161616</Color>
+            <Color x:Key="entryBackground">#eeeeee</Color>
+            <Color x:Key="text1">#eeeeee</Color>
+            <Color x:Key="text2">#ffffff</Color>
+            <Color x:Key="primary1">#ff5050</Color>
+            <Color x:Key="primary2">#373737</Color>
+            <Color x:Key="link">#62d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <!---->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        
+        <StackLayout Grid.Row="1"
+                     Grid.RowSpan="2"
+                     Grid.ColumnSpan="2"
+                     BackgroundColor="{StaticResource primary2}"
+                     VerticalOptions="Fill"
+                     HorizontalOptions="Fill">
+        </StackLayout>
+        <Label Grid.Row="0"/>
+
+        <Image Margin="20,0,0,0"
+            x:Name="ShopImage1" 
+            Grid.Row="1"
+               Grid.Column="0" 
+               Grid.RowSpan="2" 
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+        <Image Margin="0,0,20,0"
+            x:Name="ShopImage2" 
+            Grid.Row="1" 
+               Grid.Column="1" 
+               VerticalOptions="EndAndExpand"
+               HorizontalOptions="StartAndExpand"/>
+        <Image Margin="0,0,20,0"
+            x:Name="ShopImage3" 
+            Grid.Row="2" 
+               Grid.Column="1" 
+               VerticalOptions="StartAndExpand"
+               HorizontalOptions="StartAndExpand"/>
+
+        <Label Grid.Row="3" 
+               Text="81-384 Yonge St." 
+               HorizontalOptions="Center" 
+               Grid.ColumnSpan="2" 
+               Grid.Column="0" 
+               VerticalOptions="End"/>
+        <Label 
+            Grid.Row="4" 
+            Text="M5B 1S8, Toronto ON"  
+            HorizontalOptions="Center" 
+            Grid.ColumnSpan="2" 
+            Grid.Column="0" 
+            VerticalOptions="Start"/>
+
+        <Label 
+            Margin="20,0,0,0"
+            Grid.Row="5" 
+            Text="General Inquiries:" 
+            HorizontalOptions="Start" 
+            Grid.Column="0" 
+            VerticalOptions="Center"/>
+        
+        <Label 
+            Margin="0,0,20,0"
+            BackgroundColor="Transparent"
+            x:Name="talkEmailBtn"
+            Grid.Row="5" 
+            StyleClass="Link" 
+            HorizontalOptions="End"  
+            Grid.Column="0" 
+            Grid.ColumnSpan="2" 
+            VerticalOptions="Center"
+            TextColor="{StaticResource primary1}"
+            />
+
+        <Label 
+            Margin="20,0,0,0"
+            Grid.Row="6" 
+            Text="Press:" 
+            HorizontalOptions="Start" 
+            Grid.Column="0" 
+            VerticalOptions="Center">
+            </Label>
+        
+        <Label 
+            Margin="0,0,20,0"
+            BackgroundColor="Transparent"
+            Grid.Row="6" 
+            x:Name="mediaEmailBtn"
+                StyleClass="Link"  
+                HorizontalOptions="End"  
+                Grid.Column="0" 
+                Grid.ColumnSpan="2" 
+                VerticalOptions="Center"
+            TextColor="{StaticResource primary1}"/>       
+        
+        <Label 
+            BackgroundColor="Transparent"
+            Grid.Row="7" 
+            x:Name="websiteBtn"
+                StyleClass="Link"  
+                HorizontalOptions="Center"  
+                Grid.Column="0" 
+                Grid.ColumnSpan="2" 
+                VerticalOptions="Center"
+            FontSize="20"
+            FontAttributes="Bold"
+            TextColor="{StaticResource primary1}">
+            </Label>
+        <Image Grid.Row="8" Grid.ColumnSpan="2"
+               x:Name="mapPlaceholder"/>
+    </Grid>
+</ContentPage>

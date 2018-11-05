@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Android1.ArtistsPage">
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <Color x:Key="background">#161616</Color>
+            <Color x:Key="entryBackground">#eeeeee</Color>
+            <Color x:Key="text1">#eeeeee</Color>
+            <Color x:Key="text2">#ffffff</Color>
+            <Color x:Key="primary1">#ff5050</Color>
+            <Color x:Key="primary2">#373737</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <ListView 
+            x:Name="artistList" 
+            ItemsSource="{Binding ArtistCollection}"
+            BackgroundColor="{StaticResource background}"
+            HasUnevenRows="True"
+            ItemTapped="OnTap">            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="{StaticResource background}"
+                                     Padding="20,20,20,50">
+                            
+                            <Label Text="{Binding name}"  
+                                   IsVisible="{Binding invisibility}"
+                                   HorizontalOptions="Center"
+                                   FontSize="Medium"
+                                   FontFamily="Bold"/>
+                            
+                            <Image Source ="{Binding imageIcon}" 
+                                   IsVisible="{Binding invisibility}"
+                                   HorizontalOptions="Center"
+                                   Margin="0, 10,0,0"/>
+                            
+                            <Label Text="{Binding name}"  
+                                   IsVisible="{Binding visibility}"
+                                   HorizontalOptions="Center"
+                                   FontSize="Large"
+                                   FontFamily="Bold"
+                                   TextColor="{StaticResource primary1}"/>
+                            <Image Source ="{Binding imageSrc}" 
+                                   IsVisible="{Binding visibility}"
+                                   HorizontalOptions="Center"
+                                   Margin="15, 30,15,0"/>
+
+                            <StackLayout
+                                IsVisible="{Binding visibility}"
+                                  BackgroundColor="{StaticResource primary2}">
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text= "Specialties: " 
+                                   FontSize="Medium"
+                                   Margin="20,20,0,20"
+                                   FontAttributes="Bold"
+                                       Grid.Column="0"/>
+
+                                    <Label Text= "{Binding specialty}" 
+                                        TextColor="{StaticResource primary1}"
+                                        FontSize="Medium"
+                                        Margin="0,20,20,20"
+                                        FontAttributes="Italic"
+                                        Grid.Column="1"/>
+                                </Grid>
+
+                                <StackLayout BackgroundColor="#282828"
+                                             Margin="10,0,10,10">
+                                    <Label Text="{Binding about}" 
+                                   HorizontalOptions="Start"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </StackLayout>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </ContentPage.Content>
+
+</ContentPage>

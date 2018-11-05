@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Android1.Splash"
+             BackgroundColor="#111111">
+    <ContentPage.Content>
+        <Image Margin = "100,100,100,100"
+               Source="https://static.wixstatic.com/media/72095d_3ed934be22ae4b7b891045c0fd654574~mv2.png"
+            Aspect="AspectFit"
+            ></Image>
+    </ContentPage.Content>
+</ContentPage>

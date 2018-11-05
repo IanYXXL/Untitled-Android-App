@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Android1"
+             x:Class="Android1.AccountMain"
+            BackgroundColor="{StaticResource primary1}"
+            BarBackgroundColor="{StaticResource primary1}"
+            BarTextColor="{StaticResource text2}">
+
+    <TabbedPage.Resources>
+        <!--dark-->
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#eeeeee"/>
+                </Style>
+        <Style TargetType="TabbedPage">
+            <Setter Property="BackgroundColor" Value="#ff5050"/>
+        <Setter Property="BackgroundColor" Value="Black"/>
+        <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+            <Color x:Key="background">#161616</Color>
+            <Color x:Key="entryBackground">#eeeeee</Color>
+            <Color x:Key="text1">#eeeeee</Color>
+            <Color x:Key="text2">#ffffff</Color>
+            <Color x:Key="primary1">#ff5050</Color>
+            <Color x:Key="primary2">#373737</Color>
+
+        </ResourceDictionary>
+
+    </TabbedPage.Resources>
+
+    <local:Rewards Title="Home" />
+    <local:Gallery Title="Gallery"/>
+    <local:ArtistsPage Title="Artists"/>
+    <local:Contact Title="Contact"/>
+
+
+</TabbedPage>
